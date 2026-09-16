@@ -1,0 +1,10 @@
+# Generated C/C++ build files
+*.exe
+*.o
+*.obj
+*.out
+*.pdb
+*.log
+
+# Local editor settings (compiler paths differ between teammates)
+.vscode/
