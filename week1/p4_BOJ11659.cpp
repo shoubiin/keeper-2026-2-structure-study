@@ -3,6 +3,9 @@
 using namespace std;
 
 int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
     int n, m;
     cin >> n >> m;
     
@@ -12,4 +15,19 @@ int main() {
         cin >> a[i];
     }
     
+    //누적합 만들기
+    vector<int> prefix(n + 1, 0);
+
+    for (int i = 0; i < n; i++) {
+        prefix[i + 1] = prefix[i] + a[i];
+    }
+
+    //구간 합 질문 처리
+    for (int q = 0; q < m; q++) {
+        int left, right;
+        cin >> left , right;
+
+        cout << prefix[right] - prefix[left - 1] << '\n';
+    }
+    return 0;
 }
